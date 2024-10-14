@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 })
 export class SignupService {
 
-  private apiUrl = 'http://localhost:3000/signup'; 
+  private apiUrl = 'http://localhost:8080/user';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   signUp(signupData: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, signupData);

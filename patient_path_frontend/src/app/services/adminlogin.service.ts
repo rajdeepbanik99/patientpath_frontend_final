@@ -19,11 +19,12 @@ import { Observable } from 'rxjs';
 })
 export class AdminLoginService {
 
-  private apiUrl = 'http://localhost:3000/admin'; // Your API endpoint for admin
+  private apiUrl = 'http://localhost:8080/admin/login'; // Your API endpoint for admin
 
   constructor(private http: HttpClient) {}
 
-  getAdmins(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  loginadmin(credentials: { email: string; password: string }): Observable<any> {
+    console.log("Thi sis working in service")
+    return this.http.post(this.apiUrl, credentials);
   }
 }
