@@ -1,92 +1,75 @@
-
-
-
-
 <mat-toolbar>
   <span>Patient Path(pp)</span>
   <span class="example-spacer"></span>
-  @if(!useractive){
-  <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" [routerLink]="['/home']">
+  @if(useractive){
+  <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+    [routerLink]="['/home']">
     Home
   </button>
-  <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon" [routerLink]="['/about']">
-      Services
-    </button>
-    <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon" [routerLink]="['/doctorlist']">
-      Doctors List
-    </button>
-    <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon" [routerLink]="['/book']">
-      Book Appointment
-    </button>
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with share icon">
-      <mat-icon class="profile-icon">account_circle</mat-icon>
-    </button>
-    
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item [routerLink]="['/myaccount']" >My Account</button>
-      <button mat-menu-item   [routerLink]="['/myorders']">My Orders</button>
-      <button mat-menu-item  [routerLink]="['/login']"  (click)="logout()"> Logout</button>
-    </mat-menu>
+  <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon"
+    [routerLink]="['/about']">
+    Services
+  </button>
+  <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon"
+    [routerLink]="['/doctorlist']">
+    Doctors List
+  </button>
+  <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon"
+    [routerLink]="['/book']">
+    Book Appointment
+  </button>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with share icon">
+    <mat-icon class="profile-icon">account_circle</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['/myaccount']">My Account</button>
+    <button mat-menu-item [routerLink]="['/myorders']">My Orders</button>
+    <button mat-menu-item [routerLink]="['/login']" (click)="logout()"> Logout</button>
+  </mat-menu>
   }
 
-  @else if (!adminactive) {
-    <mat-toolbar>
-      <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  @else if (adminactive) {
+  <mat-toolbar>
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button> -->
-      <span [routerLink]="['/adminpage']"></span>
-      <span class="example-spacer"></span>
-      <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" [routerLink]="['/testdetails']">
-          Test_Deatils
-         </button>
-      <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" [routerLink]="['/doctorlistadmin']">
-       Doctor
-      </button>
-      <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with share icon" [routerLink]="['/allorder']">
-        All_Order
-      </button>
-    
-      <!-- Profile Icon Button -->
+    <span [routerLink]="['/adminpage']"></span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+      [routerLink]="['/testdetails']">
+      Test_Deatils
+    </button>
+    <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+      [routerLink]="['/doctorlistadmin']">
+      Doctor
+    </button>
+    <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with share icon"
+      [routerLink]="['/allorder']">
+      All_Order
+    </button>
+
+    <!-- Profile Icon Button -->
     <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon favorite-icon" aria-label="Profile Menu">
       <mat-icon class="profile-icon">account_circle</mat-icon>
     </button>
-    
+
     <!-- Menu -->
     <mat-menu #menu="matMenu">
       <button mat-menu-item [routerLink]="['/account']">My Account</button>
-      <button mat-menu-item  [routerLink]="['/login']"  (click)="adminlogout()"   >Logout</button>
+      <button mat-menu-item [routerLink]="['/login']" (click)="adminlogout()">Logout</button>
     </mat-menu>
-    
-    </mat-toolbar>
+
+  </mat-toolbar>
   }
 
 
 
   @else{
-    <button>login</button>
+  <button>login</button>
   }
-    
+
 </mat-toolbar>
 
 
-<router-outlet></router-outlet> 
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
+<router-outlet></router-outlet>

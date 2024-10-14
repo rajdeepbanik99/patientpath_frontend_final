@@ -1,87 +1,59 @@
-
-
-
-
-
-
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../services/login.service'; 
-import  {AppComponent } from '../app.component'
+import { LoginService } from '../services/login.service';
+import { AppComponent } from '../app.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'] 
+  styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  loginForm!: FormGroup; 
-
-  
+  loginForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService, 
+    private loginService: LoginService,
     private router: Router,
-    private __applogin:AppComponent
+    private __applogin: AppComponent,
+    private _snackbar: MatSnackBar
   ) {
-    // this.loginForm = this.formBuilder.group({
-    //   email: ['', Validators.required],
-    //   password: ['', Validators.required]
-    // });
-  }
-
-  ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]], // Added email validation
       password: ['', Validators.required]
     });
   }
 
- 
-
-
-
   logIn() {
     if (this.loginForm.invalid) {
-      alert("Please fill in all fields.");
+      this._snackbar.open("Please fill in all fields correctly.", "Close", {
+        duration: 4000
+      });
       return;
     }
 
-    this.loginService.getUsers().subscribe(res => {
-      const user = res.find((a: any) => {
-        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password;
-      });
+    const credentials = this.loginForm.value;
 
-      if (user) {
-        alert("Login Successful");
-        this.loginForm.reset();
+    this.loginService.login(credentials).subscribe({
+      next: (res: any) => {
+        console.log(res);
         localStorage.setItem("useremail", this.loginForm.value.email);
-console.log(localStorage.getItem("useremail"))
-        //this.router.navigate(['home']);
-     this.__applogin.loginactive()
-        
-        this.router.navigate(['home']); 
-      } else {
-        alert("Invalid Credentials");
+        this.__applogin.loginactive();
+        this._snackbar.open("Login successful!", "Close", {
+          duration: 4000
+        });
+        localStorage.setItem("useremail", this.loginForm.value.email);
+        this.__applogin.loginactive();
+        this.router.navigate(['home']);
+      },
+      error: (err) => {
+        this._snackbar.open("Login failed. Please try again.", "Close", {
+          duration: 4000
+        });
       }
-    }, err => {
-      alert("Server error");
     });
   }
-
-  
-
-  
 }
-
-
-
-
-
-
-
-
-
-
