@@ -2,27 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service'; // Adjust the path as necessary
 import { Router } from '@angular/router';
+import { MatSnackBar, MatSnackBarHorizontalPosition } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.css']
 })
-export class BookComponent {
+export class BookComponent implements OnInit{
 
   bookAppointmentForm!:FormGroup;
   reviewForm!:FormGroup;
-
+  hospitals: any[]=[];
 // bookingForm: any;
 // review: any;
 
   
   constructor(
     private formBuilder:FormBuilder,
-  
     private bookServices:AuthService,
-    private router:Router
+    private router:Router,
+    private _snax:MatSnackBar
   ){
+    hospital: ['']
     this.bookAppointmentForm=this.formBuilder.group({
       name:['',Validators.required],
       email:['',Validators.required],
@@ -36,8 +38,22 @@ export class BookComponent {
     ;
     this.reviewForm=this.formBuilder.group({
       writeReview:['',Validators.required]
-    })
+    });
+
   }
+  ngOnInit(): void {
+    this.bookServices.getAllData().subscribe(
+      (response)=>{
+        this.hospitals=response;
+      
+        console.log(this.hospitals);
+      },(error)=>{
+        console.log(error);
+      }
+    )
+  }
+
+
  
 //   onSubmit() {
 //     if(this.reviewForm.value){
@@ -68,12 +84,19 @@ export class BookComponent {
 
   onBookSubmit(){
     if(this.bookAppointmentForm.value){
+      console.log(new Date()+"  "+this.bookAppointmentForm.value.date);
+      const selectedDate = new Date(this.bookAppointmentForm.value.date)
+      console.log(selectedDate)
+      if(selectedDate>=new Date()){
     this.bookServices.submitBooking(this.bookAppointmentForm.value).subscribe(
       res=>{
-        alert("Booking submitted successfully");
+        this._snax.open("booked successfully","close",{duration:40000})
         this.bookAppointmentForm.reset();
       }
     )
+  }else{
+    this._snax.open("check the date properly","close",{duration:40000})
+  }
   }
 
 

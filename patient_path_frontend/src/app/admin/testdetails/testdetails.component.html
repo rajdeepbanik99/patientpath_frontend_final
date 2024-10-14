@@ -7,8 +7,9 @@
   </button>
   <div class="test-container">
       <div class="card" *ngFor="let test of filteredDetails">
-        <h3>{{ test.testName }}</h3>
-        <p>{{ test.steps }}</p>
+        <h3>{{ test.name }}</h3>
+        <p>{{ test.testDetails }}</p>
+        <p>{{test.price}}</p>
   
         <div class="button-option">
           <button mat-raised-button (click)="deleteTest(test)" class="delete-button">

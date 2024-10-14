@@ -26,9 +26,12 @@ export class TestdetailsComponent implements OnInit{
   detailsTest(){
     this.apiService.getAllTest().subscribe(
       (response)=>{
+        
         this.testDetails=response;
+        console.log(this.testDetails)
         this.filteredDetails=this.testDetails
       },(error)=>{
+        console.log(error);
           this.snacksbar.open("error in fetcing deatils","close",{
             duration:3000
           })
@@ -39,11 +42,11 @@ export class TestdetailsComponent implements OnInit{
     // this.filteredDetails = this.filteredDetails.filter(test => test !== _t4);
     this.apiService.deleteTest(test.id).subscribe(
       (respone)=>{
-        this.snacksbar.open("deleted successfull","done",{
+        this.snacksbar.open("unable to delete","close",{
           duration:3000
         })
       },(error)=>{
-        this.snacksbar.open("unable to delete","close",{
+        this.snacksbar.open("deleted sucessfully","done",{
           duration:3000
         })
       }

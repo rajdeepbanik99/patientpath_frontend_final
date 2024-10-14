@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   private reviewsUrl = 'http://localhost:3000/review'; // Replace with your actual API URL
-  private bookingsUrl = 'http://localhost:3000/bookappointment'; // Replace with your actual API URL
+  // private bookingsUrl = 'http://localhost:3000/bookappointment'; 
+  private bookingsUrl='http://localhost:8080/bookappointment';
+  private doctorurl='http://localhost:8080/doctor'
 
   constructor(private http: HttpClient) {}
 
@@ -20,6 +22,10 @@ export class AuthService {
   // submitBooking(booking: {name: string,number: string,email: string,hospital: string,doctors: string,specialist: string, date: string;}): Observable<any> {
   //   return this.http.post(this.bookingsUrl, booking);
   // }
+
+  getAllData():Observable<any>{
+    return this.http.get(this.doctorurl);
+  }
 
   submitBooking(bookingData:any):Observable<any>{
      return this.http.post<any>(this.bookingsUrl,bookingData);

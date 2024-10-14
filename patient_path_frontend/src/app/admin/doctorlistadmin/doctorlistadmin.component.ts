@@ -39,6 +39,7 @@ export class DoctorlistadminComponent {
 
   deleteDocter(d:any){
     // this.filteredDoctors = this.filteredDoctors.filter(test => test !== d);
+    console.log(d);
     this.apiService.deleteDoctor(d.id).subscribe(
       (respone)=>{
         this.snackbar.open("deleted successfully","done",{

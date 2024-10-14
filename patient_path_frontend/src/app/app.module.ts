@@ -41,6 +41,7 @@ import { AllorderComponent } from './admin/allorder/allorder.component';
 import { TestdetailsComponent } from './admin/testdetails/testdetails.component';
 import { DoctorlistadminComponent } from './admin/doctorlistadmin/doctorlistadmin.component';
 import {MatInputModule} from '@angular/material/input';
+import { TestComponent } from './user/test/test.component';
 
 
 
@@ -66,6 +67,7 @@ import {MatInputModule} from '@angular/material/input';
      AllorderComponent,
      TestdetailsComponent,
      DoctorlistadminComponent,
+     TestComponent,
      
 
    

@@ -7,8 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class ServiceService {
 
-  doctorurl='http://localhost:3000/doctorlist'
-  testurl='http://localhost:3000/testDetails'
+  // doctorurl='http://localhost:3000/doctorlist'
+  doctorurl='http://localhost:8080/doctor'
+  // testurl='http://localhost:3000/testDetails'
+  testurl='http://localhost:8080/tests'
   allorderurl='http://localhost:3000/allOrder'
 
   constructor(private http:HttpClient) { }
@@ -17,6 +19,7 @@ export class ServiceService {
     return this.http.post(this.doctorurl,data);
   }
   addTest(data:any):Observable<any>{
+    console.log(data+"this is the service side data");
     return this.http.post(this.testurl,data);
   }
 
@@ -29,16 +32,19 @@ export class ServiceService {
   }
 
   deleteDoctor(id:any):Observable<any>{
-    return this.http.delete(this.doctorurl+"/"+id);
+    console.log(id+"this is the id")
+    const url=`${this.doctorurl}/${id}`
+    return this.http.delete(url);
   }
 
   deleteTest(id:any):Observable<any>{
-    return this.http.delete(this.testurl+"/"+id);
+    const url = `${this.testurl}/${id}`;
+    return this.http.delete(url);
   }
 
   updateDoctor(id:any,data:any):Observable<any>{
-    
-    return this.http.put(this.doctorurl+"/"+id,data);
+    const url=`${this.doctorurl}/${id}`
+    return this.http.put(url,data);
   }
 
   updateTest(id:any,data:any):Observable<any>{

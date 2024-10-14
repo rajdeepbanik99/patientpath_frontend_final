@@ -15,12 +15,10 @@ export class AdddoctorComponent implements OnInit{
   newData:FormGroup;
   constructor(private _fb:FormBuilder,private dialogRef:DialogRef<AdddoctorComponent>,private apiService:ServiceService,private snackbar:MatSnackBar,@Inject(MAT_DIALOG_DATA) public data: any){
     this.newData=_fb.group({
-      name:'',
+      doctorName:'',
+      doctorSpilist:'', 
       hospitalName:'',
-      qualification:'',
-      specialty:'',
-      avaiable:'',
-      expercince:''
+      doctor_avilable:''
     });
   }
   ngOnInit(): void {

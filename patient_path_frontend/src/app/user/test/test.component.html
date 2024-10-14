@@ -1,0 +1,17 @@
+<!-- <mat-form-field appearance="fill" class="filter"> -->
+    <!-- <mat-label>Filter</mat-label> -->
+    <!-- <input matInput (input)="applyFilter($event)" placeholder="Search by name">
+  </mat-form-field>
+  <button mat-raised-button class="button" (click)="test()">
+    ADD Test
+  </button> -->
+  <div class="test-container">
+    <h2>Available tests</h2>
+      <div class="card" *ngFor="let testD of test">
+        <h3>Name : {{ testD.name }}</h3>
+        <p> procedure :{{ testD.testDetails }}</p>
+        <p>price: {{testD.price| currency:'INR':'symbol':'1.2-2' }}</p>
+
+        </div>
+      </div>
+    

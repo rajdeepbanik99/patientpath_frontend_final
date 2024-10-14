@@ -1,0 +1,47 @@
+/* Container for the test list */
+.test-container {
+  padding: 20px;
+  background-color: #3b8bb0; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+  max-width: 800px; /* Maximum width for the container */
+  margin: auto; /* Centering the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: 2%;
+}
+
+/* Heading for the available tests */
+.test-container h2 {
+  text-align: center; /* Center the heading */
+  color: #333; /* Dark gray color */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Card styling for individual tests */
+.card {
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Slightly rounded corners */
+  
+  padding: 15px; /* Inner spacing */
+  margin: 10px 0; /* Space between cards */
+  background-color: #fff; /* White background for cards */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: scale(1.02); /* Slightly enlarge the card on hover */
+}
+
+/* Card headings */
+.card h3 {
+  margin: 0 0 10px; /* No margin on top, space below */
+  color: #2c3e50; /* Dark blue-gray color */
+}
+
+/* Card paragraphs */
+.card p {
+  margin: 5px 0; /* Space above and below paragraphs */
+  color: #555; /* Medium gray color */
+  font-size: 16px; /* Font size for paragraphs */
+}

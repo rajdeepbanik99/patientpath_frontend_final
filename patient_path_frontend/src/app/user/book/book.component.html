@@ -1,65 +1,3 @@
-<!-- 
-  <section class="book" id="book">
-    <h1 class="heading"> <span>Book</span> now</h1>
-    <div class="row">
-        <form [formGroup]="bookAppointmentForm" (ngSubmit)="onBookSubmit()">
-            <h3>Book your appointment</h3>
-            
-            <label for="name">Your Name</label>
-            <input  formControlName="name" type="text" id="name" placeholder="your name" class="box" required name="name" ngModel>
-
-            <label for="number">Your Number</label>
-            <input formControlName="number" type="number"  id="number" placeholder="your number" class="box" required name="number" ngModel>
-
-            <label for="email">Your Email</label>
-            <input formControlName="email"  type="email"  id="email" placeholder="your email" class="box" required name="email" ngModel>
-
-            <label for="hospital">Select a Hospital</label>
-            <select formControlName="hospital" class="box" required name="hospital" ngModel>
-                <option value="" disabled selected>Select a hospital</option>
-                <option value="hospital1">Hospital 1</option>
-                <option value="hospital2">Hospital 2</option>
-                <option value="hospital3">Hospital 3</option>
-            </select>
-
-            <label for="doctors">Select Type of Doctor</label>
-            <select formControlName="doctors" class="box" required name="doctors" ngModel>
-                <option value="" disabled selected>Select type of doctor</option>
-                <option value="general">General Practitioner</option>
-                <option value="specialist">Specialist</option>
-                <option value="surgeon">Surgeon</option>
-            </select>
-
-            <label for="specialist">Select a Specialist</label>
-            <select formControlName="specialist" class="box" required name="specialist" ngModel>
-                <option value="" disabled selected>Select a specialist</option>
-                <option value="cardiologist">Cardiologist</option>
-                <option value="dermatologist">Dermatologist</option> 
-                <option value="neurologist">Neurologist</option>
-                 
-            </select>
-
-            <label for="date">Select Date</label>
-            <input formControlName="date" type="date" id="date" class="box" required name="date" ngModel>
-
-            <input type="submit" value="book now" class="btn" [disabled]="!bookAppointmentForm.valid">
-        </form>
-    </div>
-</section>
-
-<section class="review" id="review">
-    <h3 class="heading"> Client's <span> review</span></h3>
-    <div class="box-container">
-        <form [formGroup]="reviewForm"  (ngSubmit)="onSubmit()" >
-            <h3>Write a review</h3>
-            <input formControlName="writeReview" type="text" name="comment" placeholder="your review" class="box" required>
-            <input type="submit" value="Submit" class="btn" [disabled]="!reviewForm!.valid" (click)="onSubmit()" >
-        </form>
-    </div>
-</section> -->
-
-
-
 <section class="book" id="book">
     <h1 class="heading"> <span>Book</span> now</h1>
     <div class="row">
@@ -76,27 +14,30 @@
             <input formControlName="email" type="email" id="email" placeholder="your email" class="box" required name="email">
 
             <label for="hospital">Select a Hospital</label>
+            <!-- <select formControlName="hospital" class="box" required name="hospital">
+                <option value="" disabled selected>Select a hospital</option>
+
+                 <option value="hospital1">Hospital 1</option>
+                <option value="hospital2">Hospital 2</option>
+                <option value="hospital3">Hospital 3</option> 
+            </select> -->
             <select formControlName="hospital" class="box" required name="hospital">
                 <option value="" disabled selected>Select a hospital</option>
-                <option value="hospital1">Hospital 1</option>
-                <option value="hospital2">Hospital 2</option>
-                <option value="hospital3">Hospital 3</option>
-            </select>
+                <option *ngFor="let hospital of hospitals" [value]="hospital.hospitalName">{{ hospital.hospitalName }}</option>
+              </select>
+              
+            
 
             <label for="doctors">Select Type of Doctor</label>
             <select formControlName="doctors" class="box" required name="doctors">
-                <option value="" disabled selected>Select type of doctor</option>
-                <option value="general">General Practitioner</option>
-                <option value="specialist">Specialist</option>
-                <option value="surgeon">Surgeon</option>
-            </select>
+                <option value="" disabled selected>Select a Doctor</option>
+                <option *ngFor="let doctor of hospitals" [value]="doctor.doctorName">{{ doctor.doctorName }}</option>
+              </select>
 
             <label for="specialist">Select a Specialist</label>
             <select formControlName="specialist" class="box" required name="specialist">
-                <option value="" disabled selected>Select a specialist</option>
-                <option value="cardiologist">Cardiologist</option>
-                <option value="dermatologist">Dermatologist</option> 
-                <option value="neurologist">Neurologist</option>
+                <option value="" disabled selected>Select a Specialist</option>
+                <option *ngFor="let sp of hospitals" [value]="sp.doctorSpilist">{{ sp.doctorSpilist }}</option>
             </select>
 
             <label for="date">Select Date</label>

@@ -7,11 +7,11 @@
   </button>
 <div class="test-container">
     <div class="card" *ngFor="let doctor of filteredDoctors">
-      <h3>Name :{{ doctor.name }}</h3>
+      <h3>Name :{{ doctor.doctorName }}</h3>
       <p>Hospital Name :{{ doctor.hospitalName }}</p>
-      <p>qualification :{{ doctor.qualification }}</p>
-      <p>Specialty :{{ doctor.specialty }}</p>
-      <p>expercince : {{doctor.expercince}}</p>
+      <p>doctorSpilist :{{ doctor.doctorSpilist }}</p>
+      
+      
 
       <div >
         <button mat-raised-button (click)="deleteDocter(doctor)" class="delete-button">
@@ -24,12 +24,12 @@
            Edit
         </button>
 
-        <button mat-raised-button  class="option1" *ngIf="doctor.avaiable==='yes'" >
+        <button mat-raised-button  class="option1" *ngIf="doctor.doctor_avilable===true" >
           
            Status
         </button>
 
-        <button mat-raised-button  class="option2" *ngIf="doctor.avaiable==='no'" >
+        <button mat-raised-button  class="option2" *ngIf="doctor.avaiable===false" >
           
           Status
        </button>

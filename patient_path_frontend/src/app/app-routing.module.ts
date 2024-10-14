@@ -20,6 +20,7 @@ import { TestdetailsComponent } from './admin/testdetails/testdetails.component'
 import { AllorderComponent } from './admin/allorder/allorder.component';
 import { AccountComponent } from './admin/account/account.component';
 import { DoctorlistadminComponent } from './admin/doctorlistadmin/doctorlistadmin.component';
+import { TestComponent } from './user/test/test.component';
 
 const routes: Routes = [
   // {path:'',redirectTo:'/userpage',pathMatch:'full'},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'doctorlist',component:DoctorlistComponent},
   {path:'myaccount',component:MyaccountComponent},
   {path:'about',component:AboutComponent},
+  {path:'test',component:TestComponent},
   {
     path:'',redirectTo:'login',pathMatch:'full'
   },

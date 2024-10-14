@@ -27,8 +27,9 @@ export class AddtestComponent implements OnInit {
     newTest:FormGroup;
     constructor(private _fb:FormBuilder,private dialogRef:DialogRef<AddtestComponent>,private apiService:ServiceService,private snackbar:MatSnackBar,@Inject(MAT_DIALOG_DATA) public data: any){
       this.newTest=_fb.group({
-        testName:'',
-        steps:''
+        name:'',
+        testDetails:'',
+        price:''
       });
     }
   ngOnInit(): void {
@@ -52,11 +53,11 @@ export class AddtestComponent implements OnInit {
       }else{
         this.apiService.updateTest(this.data.id,this.newTest.value).subscribe(
           (response)=>{
-            this.snackbar.open("update test details succesfully" ,"done",{
+            this.snackbar.open("unsuccessfully update the test details","close",{
               duration:2000
             })
           },(error)=>{
-            this.snackbar.open("unsuccessfully update the test details","close",{
+            this.snackbar.open("update test details succesfully" ,"done",{
               duration:3000
             })
           }

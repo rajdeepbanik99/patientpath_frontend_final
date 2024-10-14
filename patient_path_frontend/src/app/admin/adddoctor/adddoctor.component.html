@@ -1,160 +1,7 @@
-<!-- 
-<div mat-dialog-title>
-    <p>Add Doctor Details</p>
-</div>
-<form  [formGroup]="newData" (ngSubmit)="onSave()">
-
-    
-<div mat-dialog-content>
-   
-    <p></p>
-     
-
-     <p>
-        <mat-form-field appearance="outline">
-            <mat-label>Doctor Name</mat-label>
-            <input matInput placeholder="Enter the DoctorName" formControlName="name">
-            <mat-hint>Add Doctor Name</mat-hint>
-          </mat-form-field>
-     </p>
-
-     <p>
-        <mat-form-field appearance="outline">
-            <mat-label>Hospital Name</mat-label>
-            <input matInput placeholder="Enter the steps" formControlName="hospitalName">
-            
-            <mat-hint>Add your Hospital Name?</mat-hint>
-          </mat-form-field>
-     </p>
-
-     <p>
-        <mat-form-field appearance="outline">
-            <mat-label>Qualification</mat-label>
-            <input matInput placeholder="Enter the Education" formControlName="qualification">
-            
-            <mat-hint>Add your qualification?</mat-hint>
-          </mat-form-field>
-     </p>
-
-     <p>
-        <mat-form-field appearance="outline">
-            <mat-label>specialty</mat-label>
-            <input matInput placeholder="Enter the specialty" formControlName="specialty">
-            
-            <mat-hint>Add your specialty?</mat-hint>
-          </mat-form-field>
-     </p>
-
-     <p>
-        <mat-form-field appearance="outline">
-            <mat-label>avaiable</mat-label>
-            <input matInput placeholder="Availability" formControlName="avaiable">
-            
-            <mat-hint>avaiable?(yes or no)</mat-hint>
-          </mat-form-field>
-     </p>
-
-     <p>
-        <mat-form-field appearance="outline">
-            <mat-label>expercince</mat-label>
-            <input matInput placeholder="Experience" formControlName="expercince">
-            
-            <mat-hint>Add your expercince?</mat-hint>
-          </mat-form-field>
-     </p>
-
-</div>
-
-
-<div mat-dialog-actions>
-    <button mat-raised-button (click)="close()">
-        cancel
-    </button>
-
-    <button mat-raised-button color="primary">
-        save
-    </button>
-
-
-</div>
-
-</form>  -->
-
-
-<!-- 
-
-<div class="dialog-title">
-    <h2>Add Doctor Details</h2>
-</div>
-
-<form [formGroup]="newData"  class="doctor-form">
-    <div class="dialog-content">
-        <div class="form-group">
-            <label for="name">Doctor Name</label>
-            <input type="text" id="name" placeholder="Enter the Doctor Name" formControlName="name" />
-            <small class="hint">Add Doctor Name</small>
-        </div>
-
-        <div class="form-group">
-            <label for="hospitalName">Hospital Name</label>
-            <input type="text" id="hospitalName" placeholder="Enter the Hospital Name" formControlName="hospitalName" />
-            <small class="hint">Add your Hospital Name?</small>
-        </div>
-
-        <div class="form-group">
-            <label for="qualification">Qualification</label>
-            <input type="text" id="qualification" placeholder="Enter your Qualification" formControlName="qualification" />
-            <small class="hint">Add your qualification?</small>
-        </div>
-
-        <div class="form-group">
-            <label for="specialty">Specialty</label>
-            <input type="text" id="specialty" placeholder="Enter the Specialty" formControlName="specialty" />
-            <small class="hint">Add your specialty?</small>
-        </div>
-
-        <div class="form-group">
-            <label for="available">Availability</label>
-            <input type="text" id="available" placeholder="Availability (yes or no)" formControlName="available" />
-            <small class="hint">Available? (yes or no)</small>
-        </div>
-
-        <div class="form-group">
-            <label for="experience">Experience</label>
-            <input type="text" id="experience" placeholder="Enter your Experience" formControlName="experience" />
-            <small class="hint">Add your experience?</small>
-        </div>
-    </div>
-
-    <div class="dialog-actions">
-        <button type="button" class="cancel-button" (click)="close()">Cancel</button>
-        <button type="submit" class="save-button" (click)="onSave()">Save</button>
-    </div>
-</form> -->
-
-
-<!-- <form>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Doctor Name</mat-label>
-        <input matInput placeholder="Enter the DoctorName" formControlName="name">
-        <mat-hint>Add Doctor Name</mat-hint>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Doctor Name</mat-label>
-        <input matInput placeholder="Enter the DoctorName" formControlName="name">
-        <mat-hint>Add Doctor Name</mat-hint>
-      </mat-form-field>
-</form> -->
-
-
-
-
-
 
 <!-- heder -->
 <div mat-dialog-title>
-    <p>Add Doctor Details</p>
+    <p>Edit Doctor Details</p>
 </div>
 <form  [formGroup]="newData" (ngSubmit)="onSave()">
 
@@ -167,7 +14,7 @@
      <p>
         <mat-form-field appearance="outline">
             <mat-label>Doctor Name</mat-label>
-            <input matInput placeholder="Enter the DoctorName" formControlName="name">
+            <input matInput placeholder="Enter the DoctorName" formControlName="doctorName">
             <mat-hint>Add Doctor Name</mat-hint>
           </mat-form-field>
      </p>
@@ -181,19 +28,12 @@
           </mat-form-field>
      </p>
 
-     <p>
-        <mat-form-field appearance="outline">
-            <mat-label>Qualification</mat-label>
-            <input matInput placeholder="Enter the Education" formControlName="qualification">
-            
-            <mat-hint>Add your qualification?</mat-hint>
-          </mat-form-field>
-     </p>
+    
 
      <p>
         <mat-form-field appearance="outline">
             <mat-label>specialty</mat-label>
-            <input matInput placeholder="Enter the specialty" formControlName="specialty">
+            <input matInput placeholder="Enter the specialty" formControlName="doctorSpilist">
             
             <mat-hint>Add your specialty?</mat-hint>
           </mat-form-field>
@@ -202,20 +42,13 @@
      <p>
         <mat-form-field appearance="outline">
             <mat-label>avaiable</mat-label>
-            <input matInput placeholder="Enter the specialty" formControlName="avaiable">
+            <input matInput placeholder="Enter the doctor_avilable" formControlName="doctor_avilable">
             
-            <mat-hint>avaiable?(yes or no)</mat-hint>
+            <mat-hint>avaiable?(true or false)</mat-hint>
           </mat-form-field>
      </p>
 
-     <p>
-        <mat-form-field appearance="outline">
-            <mat-label>expercince</mat-label>
-            <input matInput placeholder="Enter the specialty" formControlName="expercince">
-            
-            <mat-hint>Add your expercince?</mat-hint>
-          </mat-form-field>
-     </p>
+     
 
 </div>
 
