@@ -1,0 +1,53 @@
+<mat-form-field appearance="fill" class="filter">
+    <mat-label>Filter</mat-label>
+    <input matInput (input)="applyFilter($event)" placeholder="Search by name">
+  </mat-form-field>
+  <button mat-raised-button class="button" (click)="test()">
+    ADD Test
+  </button>
+  <div class="test-container">
+      <div class="card" *ngFor="let test of filteredDetails">
+        <h3>{{ test.testName }}</h3>
+        <p>{{ test.steps }}</p>
+  
+        <div class="button-option">
+          <button mat-raised-button (click)="deleteTest(test)" class="delete-button">
+            <mat-icon class="delete-icon">delete</mat-icon>
+             <span class="delete-icon">Delete</span>
+          </button>
+    
+          <button mat-raised-button (click)="editTest(test)" class="option">
+            <mat-icon>edit</mat-icon>
+             Edit
+          </button>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+       <!-- <div class="filter-container">
+        <input type="text" class="filter-input" (input)="applyFilter($event)" placeholder="Search by name">
+        <button class="add-button" (click)="test()">
+          ADD Test
+        </button>
+      </div>
+      
+      <div class="test-container">
+        <div class="card" *ngFor="let test of filteredDetails">
+          <h3>{{ test.testName }}</h3>
+          <p>{{ test.steps }}</p>
+      
+          <div class="button-option">
+            <button class="delete-button" (click)="deleteTest(test)">
+              Delete
+            </button>
+      
+            <button class="edit-button" (click)="editTest(test)">
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+       -->

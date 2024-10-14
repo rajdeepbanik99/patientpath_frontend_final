@@ -1,0 +1,137 @@
+/* Toolbar Styles */
+
+
+
+
+mat-toolbar {
+    background-color: #3c8cb1; /* Toolbar background color */
+    color: white; /* Text color */
+    padding: 0 16px; /* Padding around the toolbar */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+/* Toolbar Title Styles */
+mat-toolbar span {
+    font-size: 1.5rem; /* Adjust font size for the title */
+    font-weight: bold; /* Make the title bold */
+}
+
+/* Spacer for Alignment */
+.example-spacer {
+    flex: 1; /* Takes up available space to push buttons to the right */
+}
+
+/* Button Styles */
+.example-icon {
+    margin-left: 16px; /* Spacing between buttons */
+    background-color: transparent; /* Button background */
+    color: white; /* Button text color */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+/* Button Hover Effect */
+.example-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+}
+
+/* Profile Icon Styles */
+.profile-icon {
+    color: white; /* Profile icon color */
+}
+
+/* Menu Item Styles */
+mat-menu {
+    min-width: 200px; /* Set a minimum width for the menu */
+}
+
+/* Menu Item Hover Effect */
+mat-menu button:hover {
+    background-color: rgba(60, 140, 177, 0.1); /* Light background on hover */
+}
+
+/* General Styles */
+/* body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* A light background for contrast 
+} */
+
+h1 {
+    text-align: center;
+    color: rgb(46, 105, 142);
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+h3 {
+    font-size: 2rem;
+    color: rgb(106, 150, 183);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Form Styles */
+form {
+    max-width: 600px; /* Limit the width of the form */
+    margin: 20px auto; /* Center the form */
+    padding: 20px; /* Add padding for spacing */
+    background-color: #fff; /* White background for the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Label Styles */
+label {
+    display: block; /* Ensure labels are above inputs */
+    margin: 10px 0 5px; /* Space above and below */
+    font-weight: bold; /* Bold labels */
+}
+
+/* Input and Select Styles */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%; /* Full width */
+    height: 50px; /* Consistent height */
+    padding: 10px; /* Padding for content */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    box-sizing: border-box; /* Include padding and border in width */
+    margin-bottom: 15px; /* Space below each input */
+}
+
+/* Button Styles */
+.btn {
+    width: 100%; /* Full width button */
+    height: 50px; /* Consistent height */
+    background-color: #5cb85c; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+.btn:hover {
+    background-color: #4cae4c; /* Darker green on hover */
+}
+
+/* Flexbox Alignment for Form Elements */
+form > label,
+form > input,
+form > select {
+    display: flex; /* Use flexbox for better alignment */
+    align-items: center; /* Center items vertically */
+}
+
+/* Ensuring Buttons Align Properly */
+.btn {
+    align-self: flex-end; /* Align button at the end */
+}

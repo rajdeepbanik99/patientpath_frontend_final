@@ -1,0 +1,17 @@
+.whole{
+    display: flex;
+    padding: 10px;
+}
+.img{
+    height: 100%;
+    padding-top: 5%;
+}
+.text{
+    padding-top: 5%;
+    height: 100%;
+    
+}
+p{
+    margin: 10px;
+    width: 90%;
+}

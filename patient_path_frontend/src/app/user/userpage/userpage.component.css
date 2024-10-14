@@ -1,0 +1,123 @@
+/* Toolbar Styles */
+mat-toolbar {
+    background-color: #3c8cb1; /* Toolbar background color */
+    color: white; /* Text color */
+    padding: 0 16px; /* Padding around the toolbar */
+}
+
+/* Toolbar Title Styles */
+mat-toolbar span {
+    font-size: 1.5rem; /* Adjust font size for the title */
+    font-weight: bold; /* Make the title bold */
+}
+
+/* Spacer for Alignment */
+.example-spacer {
+    flex: 1; /* Takes up available space to push buttons to the right */
+}
+
+/* Button Styles */
+.example-icon {
+    margin-left: 16px; /* Spacing between buttons */
+    background-color: transparent; /* Button background */
+    color: white; /* Button text color */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+/* Button Hover Effect */
+.example-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+}
+
+/* Profile Icon Styles */
+.profile-icon {
+    color: white; /* Profile icon color */
+}
+
+/* Menu Item Styles */
+mat-menu {
+    min-width: 200px; /* Set a minimum width for the menu */
+}
+
+/* Menu Item Hover Effect */
+mat-menu button:hover {
+    background-color: rgba(60, 140, 177, 0.1); /* Light background on hover */
+}
+
+
+/* Services Section */
+.services {
+    padding: 60px 20px;
+    background: #f4f4f4; /* Light background color */
+    text-align: center;
+}
+
+.heading {
+    font-size: 2.5rem; /* Heading size */
+    margin-bottom: 40px; /* Space below heading */
+}
+
+.heading span {
+    color: #ff6347; /* Highlight color for 'services' */
+}
+
+.box-container {
+    display: flex; /* Flexbox layout */
+    flex-wrap: wrap; /* Allow wrapping of boxes */
+    justify-content: center; /* Center align boxes */
+    gap: 20px; /* Space between boxes */
+}
+
+.box {
+    background: #fff; /* White background for boxes */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside boxes */
+    width: 300px; /* Fixed width for boxes */
+    text-align: center; /* Centered text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.box:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.box i {
+    font-size: 3rem; /* Icon size */
+    color: #ff6347; /* Icon color */
+}
+
+.box h3 {
+    font-size: 1.5rem; /* Heading size inside box */
+    margin: 15px 0; /* Space above and below heading */
+}
+
+.box p {
+    font-size: 1rem; /* Font size for description */
+    color: #666; /* Grey color for description text */
+}
+
+.btn {
+    display: inline-block; /* Inline block for button */
+    margin-top: 10px; /* Space above button */
+    padding: 10px 20px; /* Padding inside button */
+    background: #138789; /* Button background color */
+    color: #fff; /* Button text color */
+    border-radius: 5px; /* Rounded corners for button */
+    text-decoration: none; /* Remove underline from link */
+    transition: background 0.3s; /* Smooth transition for hover effect */
+}
+
+.btn:hover {
+    background: #e5533d; /* Darker shade on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .box {
+        width: 90%; /* Full width on smaller screens */
+    }
+}
+
+

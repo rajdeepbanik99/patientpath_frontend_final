@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Welcome To patient Path</h1>
+                    
+                </div>
+                <form  [formGroup]="signupForm"   (ngSubmit)="signUp()" >
+                    <div class="mb-3">
+                      <label  class="form-label">Email address</label>
+                      <input   formControlName="email"   type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">First Name</label>
+                        <input  formControlName="firstName"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        
+                      </div>
+
+
+                      <div class="mb-3">
+                        <label  class="form-label">Last Name</label>
+                        <input  formControlName="lastName" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        
+                      </div>
+
+
+
+                      <div class="mb-3">
+                        <label  class="form-label">password</label>
+                        <input  formControlName="password"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        
+                      </div>
+
+
+                    
+
+
+
+
+                      <div class="mb-3">
+                        <label  class="form-label">Age</label>
+                        <input  formControlName="age"   type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        
+                      </div>
+
+
+
+
+                      <div class="mb-3">
+                        <label  class="form-label">Phnoe Number</label>
+                        <input  formControlName="phone"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        
+                      </div>
+                   
+
+
+
+                    
+                   
+                    <button type="submit" class="btn btn-primary">signup</button>
+                  </form>
+                  <a routerLink="/login"   style="margin-top: 10px;"  >Already a User?click to Login!</a>
+
+                  <a routerLink="/adminlogin"    style="margin-top: 15px;"   >Admin Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+ 

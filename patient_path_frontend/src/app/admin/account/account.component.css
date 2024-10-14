@@ -1,0 +1,37 @@
+/* Apply styles to the body to use flexbox */
+body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100vh;          /* Full viewport height */
+    margin: 0;              /* Remove default margin */
+    background-color: #f0f0f0; /* Optional: background color for the page */
+  }
+  
+  /* Style for the details container */
+  .details {
+    background-color: #f9f9f9; /* Light background for better contrast */
+    border: 1px solid #ddd;    /* Light border around the details */
+    border-radius: 5px;        /* Rounded corners */
+    padding: 15px;             /* Padding for space inside the box */
+    margin: 20px;              /* Margin to create space outside the box */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 400px;         /* Optional: limit the width of the details box */
+    width: 100%;              /* Make it responsive */
+  }
+  
+  .details p {
+    font-size: 16px;           /* Font size for the text */
+    color: #333;               /* Dark text color */
+    margin: 5px 0;            /* Vertical spacing between paragraphs */
+  }
+  
+  .details p:first-child {
+    font-weight: bold;         /* Bold first name for emphasis */
+    font-size: 18px;          /* Slightly larger font size */
+  }
+  
+  .details p:last-child {
+    color: #666;               /* Lighter color for the last paragraph (age) */
+  }
+  

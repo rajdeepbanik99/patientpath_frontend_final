@@ -1,0 +1,11 @@
+<div class="user-account">
+    <h2>User Account</h2>
+
+    <div class="profile">
+        <h3>Profile Overview</h3>
+        <p>Name: {{ user.name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Phone: {{ user.number }}</p>
+        <button mat-raised-button [routerLink]="['/editeditProfile']">Edit Profile</button>
+    </div>  
+</div>

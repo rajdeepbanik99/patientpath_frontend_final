@@ -1,0 +1,46 @@
+<!-- heder -->
+<div mat-dialog-title>
+    <p>Add Test Details</p>
+</div>
+<form  [formGroup]="newTest" (ngSubmit)="onSave()">
+
+    <!-- content  -->
+<div mat-dialog-content>
+    <!-- dummy to avoid the overlpa with headin -->
+    <p></p>
+     
+
+     <p>
+        <mat-form-field appearance="outline">
+            <mat-label>TestName</mat-label>
+            <input matInput placeholder="Enter the Testname" formControlName="testName">
+            
+            <mat-hint>Add Test Name</mat-hint>
+          </mat-form-field>
+     </p>
+
+     <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Steps</mat-label>
+            <input matInput placeholder="Enter the steps" formControlName="steps">
+            
+            <mat-hint>Add you can steps?</mat-hint>
+          </mat-form-field>
+     </p>
+
+</div>
+
+<!-- acton button  -->
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close()">
+        cancel
+    </button>
+
+    <button mat-raised-button color="primary">
+        save
+    </button>
+
+
+</div>
+
+</form>

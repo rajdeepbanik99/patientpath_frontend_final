@@ -1,0 +1,45 @@
+<mat-form-field appearance="fill" class="filter">
+    <mat-label>Filter</mat-label>
+    <input matInput (input)="applyFilter($event)" placeholder="Search by name or specialty">
+  </mat-form-field>
+  <button mat-raised-button class="button" (click)="newAdd()">
+    ADD Doctor
+  </button>
+<div class="test-container">
+    <div class="card" *ngFor="let doctor of filteredDoctors">
+      <h3>Name :{{ doctor.name }}</h3>
+      <p>Hospital Name :{{ doctor.hospitalName }}</p>
+      <p>qualification :{{ doctor.qualification }}</p>
+      <p>Specialty :{{ doctor.specialty }}</p>
+      <p>expercince : {{doctor.expercince}}</p>
+
+      <div >
+        <button mat-raised-button (click)="deleteDocter(doctor)" class="delete-button">
+          <mat-icon class="delete-icon">delete</mat-icon>
+           <span class="delete-icon">Delete</span>
+        </button>
+  
+        <button mat-raised-button (click)="editDocter(doctor)" class="option">
+          <mat-icon>edit</mat-icon>
+           Edit
+        </button>
+
+        <button mat-raised-button  class="option1" *ngIf="doctor.avaiable==='yes'" >
+          
+           Status
+        </button>
+
+        <button mat-raised-button  class="option2" *ngIf="doctor.avaiable==='no'" >
+          
+          Status
+       </button>
+      </div>
+    </div>
+  </div>
+   
+
+
+
+
+
+   

@@ -1,0 +1,82 @@
+
+
+
+   <div class="container">
+    <h2>Your Appointments</h2>
+    
+    <table class="appointment-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Hospital</th>
+          <th>Doctor</th>
+          <th>Specialist</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appointments">
+          <td>{{ appointment.id }}</td>
+          <td *ngIf="!isEditing || selectedAppointment.id !== appointment.id">{{ appointment.name }}</td>
+          <td *ngIf="isEditing && selectedAppointment.id === appointment.id">
+            <input [(ngModel)]="selectedAppointment.name" name="name" required>
+          </td>
+          <td *ngIf="!isEditing || selectedAppointment.id !== appointment.id">{{ appointment.email }}</td>
+          <td *ngIf="isEditing && selectedAppointment.id === appointment.id">
+            <input [(ngModel)]="selectedAppointment.email" name="email" required>
+          </td>
+          <td *ngIf="!isEditing || selectedAppointment.id !== appointment.id">{{ appointment.number }}</td>
+          <td *ngIf="isEditing && selectedAppointment.id === appointment.id">
+            <input [(ngModel)]="selectedAppointment.number" name="number" required>
+          </td>
+          <td *ngIf="!isEditing || selectedAppointment.id !== appointment.id">{{ appointment.hospital }}</td>
+          <td *ngIf="isEditing && selectedAppointment.id === appointment.id">
+            <select [(ngModel)]="selectedAppointment.hospital" name="hospital" required>
+                <option value="" disabled>Select a hospital</option>
+                <option *ngFor="let hospital of hospitals" [value]="hospital">{{ hospital }}</option>
+            </select>
+          </td>
+          <td *ngIf="!isEditing || selectedAppointment.id !== appointment.id">{{ appointment.doctors }}</td>
+          <td *ngIf="isEditing && selectedAppointment.id === appointment.id">
+            <select [(ngModel)]="selectedAppointment.doctors" name="doctors" required>
+                <option value="" disabled>Select type of doctor</option>
+                <option *ngFor="let doctor of doctors" [value]="doctor">{{ doctor }}</option>
+            </select>
+          </td>
+          <td *ngIf="!isEditing || selectedAppointment.id !== appointment.id">{{ appointment.specialist }}</td>
+          <td *ngIf="isEditing && selectedAppointment.id === appointment.id">
+            <select [(ngModel)]="selectedAppointment.specialist" name="specialist" required>
+                <option value="" disabled>Select a specialist</option>
+                <option *ngFor="let specialist of specialists" [value]="specialist">{{ specialist }}</option>
+            </select>
+          </td>
+          <td *ngIf="!isEditing || selectedAppointment.id !== appointment.id">{{ appointment.date }}</td>
+          <td *ngIf="isEditing && selectedAppointment.id === appointment.id">
+            <input [(ngModel)]="selectedAppointment.date" name="date" required>
+          </td>
+          <td *ngIf="!isEditing || selectedAppointment.id !== appointment.id">{{ appointment.time }}</td>
+          <td *ngIf="isEditing && selectedAppointment.id === appointment.id">
+            <input [(ngModel)]="selectedAppointment.time" name="time" required>
+          </td>
+          <td>
+            <button (click)="deleteAppointment(appointment.id)" style="margin-bottom: 5px;"  >Delete</button>
+            <ng-container *ngIf="!isEditing || selectedAppointment.id !== appointment.id">
+              <button (click)="openEditModal(appointment)">Edit</button>
+            </ng-container>
+            <div *ngIf="isEditing && selectedAppointment.id === appointment.id">
+              <button (click)="updateAppointment()">Save</button>
+            </div>
+          </td>
+        </tr>
+        <tr *ngIf="appointments.length === 0">
+          <td colspan="10">No appointments found.</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+ 

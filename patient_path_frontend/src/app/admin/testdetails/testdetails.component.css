@@ -1,0 +1,203 @@
+/* .delete-icon {
+    
+    color: white;
+  }
+  .delete-button{
+    background-color: rgb(249, 76, 76);
+  }
+  
+  .test-container {
+      display: flex;               
+      flex-wrap: wrap;            
+      gap: 20px;                  
+      justify-content: center;     
+      padding: 20px;             
+    }
+    
+    .card {
+      background-color: #ffffff;  
+      border: 1px solid #e0e0e0;  
+      border-radius: 8px;        
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+      padding: 15px;              
+      width: 300px;               
+      min-height: 150px;          
+      transition: transform 0.2s; 
+    }
+    .filter{
+      width: 70%;
+      padding-top: 2%;
+      
+    }
+    .button{
+      margin-left: 5%;
+    }
+    .button:hover{
+      color: #3f51b5;
+    }
+    
+    .card h3 {
+      margin: 0 0 10px 0;        
+    }
+    
+    .card p {
+      margin: 0;                  
+    }
+    .option{
+      margin: 3%;
+    }
+    .button-option{
+      margin-top:6% ;
+    }
+ 
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;             
+      }
+    }
+     */
+
+
+
+
+     /* .filter-container {
+        width: 70%;
+        padding-top: 2%;
+      }
+      
+      .filter-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+      
+      .add-button {
+        margin-left: 5%;
+        background-color: #3f51b5;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .add-button:hover {
+        background-color: #303f9f;
+      }
+      
+      .test-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+      }
+      
+      .card {
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        width: 300px;
+        min-height: 150px;
+        transition: transform 0.2s;
+      }
+      
+      .delete-button {
+        background-color: rgb(249, 76, 76);
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .delete-button:hover {
+        background-color: rgb(220, 50, 50);
+      }
+      
+      .edit-button {
+        background-color: #4caf50;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .edit-button:hover {
+        background-color: #388e3c;
+      }
+      
+    
+      @media (max-width: 768px) {
+        .card {
+          width: 100%;
+        }
+      }
+       */
+
+
+
+
+       .delete-icon {
+        /* background-color: red; */
+        color: white;
+      }
+      .delete-button{
+        background-color: rgb(249, 76, 76);
+      }
+      /* styles.css or component-specific stylesheet */
+      .test-container {
+          display: flex;               /* Use flexbox layout */
+          flex-wrap: wrap;            /* Allow cards to wrap */
+          gap: 20px;                  /* Space between cards */
+          justify-content: center;     /* Center the cards */
+          padding: 20px;              /* Padding around the container */
+        }
+        
+        .card {
+          background-color: #ffffff;  /* Card background color */
+          border: 1px solid #e0e0e0;  /* Light border */
+          border-radius: 8px;         /* Rounded corners */
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+          padding: 15px;              /* Padding inside the card */
+          width: 300px;               /* Fixed width for cards */
+          min-height: 150px;          /* Minimum height */
+          transition: transform 0.2s; /* Animation for hover effect */
+        }
+        .filter{
+          width: 70%;
+          padding-top: 2%;
+          
+        }
+        .button{
+          margin-left: 5%;
+        }
+        .button:hover{
+          color: #3f51b5;
+        }
+        
+        .card h3 {
+          margin: 0 0 10px 0;        /* Margin for the heading */
+        }
+        
+        .card p {
+          margin: 0;                  /* Reset margin for paragraph */
+        }
+        .option{
+          margin: 3%;
+        }
+        .button-option{
+          margin-top:6% ;
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+          .card {
+            width: 100%;              /* Full width on smaller screens */
+          }
+        }
+        
