@@ -1,15 +1,15 @@
-import { NgModule,ViewChild } from '@angular/core';
+import { NgModule, ViewChild } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
-import {  FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -25,12 +25,12 @@ import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatTableModule} from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
 
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatSort, MatSortModule} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MyOrdersComponent } from './user/myorders/myorders.component';
 import { AccountComponent } from './admin/account/account.component';
@@ -40,10 +40,15 @@ import { AdminpageComponent } from './admin/adminpage/adminpage.component';
 import { AllorderComponent } from './admin/allorder/allorder.component';
 import { TestdetailsComponent } from './admin/testdetails/testdetails.component';
 import { DoctorlistadminComponent } from './admin/doctorlistadmin/doctorlistadmin.component';
+<<<<<<< HEAD
 import {MatInputModule} from '@angular/material/input';
 import { TestComponent } from './user/test/test.component';
 
+=======
+import { MatInputModule } from '@angular/material/input';
+>>>>>>> 04930ea58157dfeb22b6d7a33f200c903074fe31
 
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -51,7 +56,7 @@ import { TestComponent } from './user/test/test.component';
     LoginComponent,
     SignupComponent,
     AdminloginComponent,
-   
+
     UserpageComponent,
     DoctorlistComponent,
     BookComponent,
@@ -59,6 +64,7 @@ import { TestComponent } from './user/test/test.component';
     MyaccountComponent,
     AboutComponent,
     NavbarComponent,
+<<<<<<< HEAD
      MyOrdersComponent,
      AccountComponent,
      AdddoctorComponent,
@@ -69,9 +75,20 @@ import { TestComponent } from './user/test/test.component';
      DoctorlistadminComponent,
      TestComponent,
      
+=======
+    MyOrdersComponent,
+    AccountComponent,
+    AdddoctorComponent,
+    AddtestComponent,
+    AdminpageComponent,
+    AllorderComponent,
+    TestdetailsComponent,
+    DoctorlistadminComponent,
 
-   
-  
+
+
+>>>>>>> 04930ea58157dfeb22b6d7a33f200c903074fe31
+
   ],
   imports: [
     BrowserModule,
@@ -80,21 +97,22 @@ import { TestComponent } from './user/test/test.component';
     RouterLink,
     HttpClientModule,
     MatPaginatorModule,
-    
-   
+
+
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
     FormsModule,
     HttpClientModule,
-   
+
     MatDialogModule,
     MatTableModule,
     MatFormFieldModule,
-     MatLabel,
-     MatInputModule
-   
+    MatLabel,
+    MatInputModule,
+
+
 
   ],
   providers: [

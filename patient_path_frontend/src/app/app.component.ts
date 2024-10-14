@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ɵɵqueryRefresh } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,67 +7,71 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'patient_path_frountend';
- public  useractive:boolean=true;
+  public useractive: boolean = false;
 
- public  adminactive:boolean=true;
+  public adminactive: boolean = false;
 
-   //emailfound:any= localStorage.getItem("useremail")
-   constructor() {
+  //emailfound:any= localStorage.getItem("useremail")
+  constructor() {
     // Check if user email exists in local storage
-   
+    this.loginactive();
+    this.adminloginactive();
+
   }
 
-   public loginactive(){
-    if (localStorage.getItem("useremail")!=null) {
-      this.useractive = false; // Set to true if email is found
+  public loginactive() {
+    if (localStorage.getItem("useremail")?.length != 0) {
+      this.useractive = true // Set to true if email is found
       console.log(this.useractive)
     }
 
-     
 
 
 
-    
-   }  
+
+
+  }
 
 
 
-   public adminloginactive(){
-    if (localStorage.getItem("useremail")!=null) {
-      this.adminactive = false; // Set to true if email is found
+  public adminloginactive() {
+    if (localStorage.getItem("adminemail")?.length != 0) {
+      this.adminactive = true; // Set to true if email is found
       console.log(this.adminactive)
     }
 
-     
 
 
 
-    
-   }
 
 
- public logout(){
-  if(this.useractive == false){
-this.useractive=true;
-localStorage.setItem('useremail',"");
   }
- }
- 
- public adminlogout(){
-  if(this.adminactive == false){
-    this.adminactive=true;
-    localStorage.setItem('useremail',"");
-      }
- }
-
- 
- 
 
 
- }
+  public logout() {
+    localStorage.setItem('useremail', "");
+    if (localStorage.getItem("useremail")?.length == 0) {
+      this.useractive = false;
+
+    }
+  }
+
+  public adminlogout() {
+    localStorage.setItem('adminemail', "");
+    if (localStorage.getItem("adminemail")?.length == 0) {
+      this.adminactive = false;
+
+    }
+  }
 
 
- 
+
+
+
+}
+
+
+
 
 
 
