@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ServiceService {
 
   // doctorurl='http://localhost:3000/doctorlist'
-  doctorurl='http://localhost:8080/doctor'
+  doctorurl='http://localhost:8081/doctor'
   // testurl='http://localhost:3000/testDetails'
   testurl='http://localhost:8080/tests'
   allorderurl='http://localhost:3000/allOrder'

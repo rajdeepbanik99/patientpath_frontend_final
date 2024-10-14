@@ -1,5 +1,7 @@
-import { Component, ɵɵqueryRefresh } from '@angular/core';
-
+import { Component, Inject, Injectable, ɵɵqueryRefresh } from '@angular/core';
+import { BookComponent } from './user/book/book.component';
+// import { DialogRef } from '@angular/cdk/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,12 +14,15 @@ export class AppComponent {
   public adminactive: boolean = false;
 
   //emailfound:any= localStorage.getItem("useremail")
-  constructor() {
+  constructor(
+  // private _dialog:MatDialogModule
+  ) {
     // Check if user email exists in local storage
     this.loginactive();
     this.adminloginactive();
 
   }
+
 
   public loginactive() {
     if (localStorage.getItem("useremail")?.length != 0) {
@@ -32,6 +37,9 @@ export class AppComponent {
 
   }
 
+  public openBookap(){
+
+  }
 
 
   public adminloginactive() {
@@ -69,6 +77,8 @@ export class AppComponent {
 
 
 }
+import { MatDialogRef } from '@angular/material/dialog';
+import { DialogRef } from '@angular/cdk/dialog';
 
 
 
