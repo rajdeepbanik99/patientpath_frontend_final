@@ -14,6 +14,7 @@ export class DoctorlistComponent implements OnInit {
   ngOnInit(): void {
     this.doctorService.getDoctors().subscribe((data: any[]) => {
       this.doctors = data;
+      console.log(data)
     });
   }
 }

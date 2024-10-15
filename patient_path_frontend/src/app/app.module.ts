@@ -40,8 +40,10 @@ import { AdminpageComponent } from './admin/adminpage/adminpage.component';
 import { AllorderComponent } from './admin/allorder/allorder.component';
 import { TestdetailsComponent } from './admin/testdetails/testdetails.component';
 import { DoctorlistadminComponent } from './admin/doctorlistadmin/doctorlistadmin.component';
+
 import {MatInputModule} from '@angular/material/input';
 import { TestComponent } from './user/test/test.component';
+
 
 
 
@@ -62,15 +64,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MyaccountComponent,
     AboutComponent,
     NavbarComponent,
-    MyOrdersComponent,
-    AccountComponent,
-    AdddoctorComponent,
-    AddtestComponent,
-    AdminpageComponent,
-    AllorderComponent,
-    TestdetailsComponent,
-    DoctorlistadminComponent,
-    TestComponent,
+
+
+     MyOrdersComponent,
+     AccountComponent,
+     AdddoctorComponent,
+     AddtestComponent,
+     AdminpageComponent,
+     AllorderComponent,
+     TestdetailsComponent,
+     DoctorlistadminComponent,
+     TestComponent,
+  
+
+
+
 
   ],
   imports: [
@@ -80,7 +88,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     RouterLink,
     HttpClientModule,
     MatPaginatorModule,
-
+    MatDialogModule,
 
     MatButtonModule,
     MatIconModule,

@@ -48,12 +48,13 @@ import { Observable } from 'rxjs';
 
 
 export class UserService {
-  private apiUrl = 'http://localhost:3000/users/1'; // Adjust URL as needed
+  private apiUrl = 'http://localhost:8000/user'; // Adjust URL as needed
 
   constructor(private http: HttpClient) { }
 
-  getUserData(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+ 
+  getUserData(email: string): Observable<any> {
+return this.http.get(this.apiUrl+"/"+email)
   }
 
   updateUserData(userData: any): Observable<any> {

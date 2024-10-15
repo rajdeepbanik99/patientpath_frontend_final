@@ -22,3 +22,9 @@
     transform: scale(1.02); 
   }
   
+  .container{
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* background-color: aquamarine; */
+  }
