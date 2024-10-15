@@ -57,13 +57,19 @@ export class TestdetailsComponent implements OnInit{
         data:data
       })
     }
+    applyFilter(event: any) {
+      const filterValue = (event.target as HTMLInputElement).value;
+      this.filteredDetails = this.testDetails.filter(test => 
+        test.name.toLowerCase().includes(filterValue.trim().toLowerCase())
+      );
+    }
     
-  applyFilter(event:any){
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.filteredDetails = this.testDetails.filter(test => 
-      test.testName.toLowerCase().includes(filterValue.trim().toLowerCase()) 
-    );
-  }
+  // applyFilter(event:any){
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.filteredDetails = this.testDetails.filter(test => 
+  //     test.testName.toLowerCase().includes(filterValue.trim().toLowerCase()) 
+  //   );
+  // }
   test(){
     const dialogRef=this.dialog.open(AddtestComponent);
     

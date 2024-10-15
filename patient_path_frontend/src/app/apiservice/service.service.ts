@@ -11,7 +11,8 @@ export class ServiceService {
   doctorurl='http://localhost:8080/doctor'
   // testurl='http://localhost:3000/testDetails'
   testurl='http://localhost:8080/tests'
-  allorderurl='http://localhost:3000/allOrder'
+  // allorderurl='http://localhost:3000/allOrder'
+  allorderurl='http://localhost:8080/bookappointment'
 
   constructor(private http:HttpClient) { }
 

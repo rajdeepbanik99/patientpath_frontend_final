@@ -40,13 +40,11 @@ import { AdminpageComponent } from './admin/adminpage/adminpage.component';
 import { AllorderComponent } from './admin/allorder/allorder.component';
 import { TestdetailsComponent } from './admin/testdetails/testdetails.component';
 import { DoctorlistadminComponent } from './admin/doctorlistadmin/doctorlistadmin.component';
-<<<<<<< HEAD
 import {MatInputModule} from '@angular/material/input';
 import { TestComponent } from './user/test/test.component';
 
-=======
-import { MatInputModule } from '@angular/material/input';
->>>>>>> 04930ea58157dfeb22b6d7a33f200c903074fe31
+
+
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -64,18 +62,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MyaccountComponent,
     AboutComponent,
     NavbarComponent,
-<<<<<<< HEAD
-     MyOrdersComponent,
-     AccountComponent,
-     AdddoctorComponent,
-     AddtestComponent,
-     AdminpageComponent,
-     AllorderComponent,
-     TestdetailsComponent,
-     DoctorlistadminComponent,
-     TestComponent,
-     
-=======
     MyOrdersComponent,
     AccountComponent,
     AdddoctorComponent,
@@ -84,10 +70,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     AllorderComponent,
     TestdetailsComponent,
     DoctorlistadminComponent,
-
-
-
->>>>>>> 04930ea58157dfeb22b6d7a33f200c903074fe31
+    TestComponent,
 
   ],
   imports: [

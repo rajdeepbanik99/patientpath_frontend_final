@@ -1,7 +1,7 @@
 
 <!-- heder -->
 <div mat-dialog-title>
-    <p>Edit Doctor Details</p>
+    <p>Doctor Details</p>
 </div>
 <form  [formGroup]="newData" (ngSubmit)="onSave()">
 
@@ -32,19 +32,34 @@
 
      <p>
         <mat-form-field appearance="outline">
-            <mat-label>specialty</mat-label>
+            <mat-label>speciality</mat-label>
             <input matInput placeholder="Enter the specialty" formControlName="doctorSpilist">
             
-            <mat-hint>Add your specialty?</mat-hint>
+            <mat-hint>Add your speciality?</mat-hint>
           </mat-form-field>
      </p>
-
      <p>
         <mat-form-field appearance="outline">
-            <mat-label>avaiable</mat-label>
+            <mat-label>Experience</mat-label>
+            <input matInput placeholder="Enter the Experience" formControlName="exprence">
+            
+            <mat-hint>Add your Experience?</mat-hint>
+          </mat-form-field>
+     </p>
+     <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Education</mat-label>
+            <input matInput placeholder="Enter the Education" formControlName="education">
+            
+            <mat-hint>Add your Education?</mat-hint>
+          </mat-form-field>
+     </p>
+     <p>
+        <mat-form-field appearance="outline">
+            <mat-label>available</mat-label>
             <input matInput placeholder="Enter the doctor_avilable" formControlName="doctor_avilable">
             
-            <mat-hint>avaiable?(true or false)</mat-hint>
+            <mat-hint>available?(true or false)</mat-hint>
           </mat-form-field>
      </p>
 
