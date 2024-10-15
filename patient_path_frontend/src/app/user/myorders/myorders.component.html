@@ -65,12 +65,12 @@
           </td>
           <td>
             <button (click)="deleteAppointment(appointment.id)" style="margin-bottom: 5px;"  >Delete</button>
-            <ng-container *ngIf="!isEditing || selectedAppointment.id !== appointment.id">
+            <!-- <ng-container *ngIf="!isEditing || selectedAppointment.id !== appointment.id">
               <button (click)="openEditModal(appointment)">Edit</button>
             </ng-container>
             <div *ngIf="isEditing && selectedAppointment.id === appointment.id">
-              <button (click)="updateAppointment()">Save</button>
-            </div>
+              <button (click)="updateAppointment(selectedAppointment.id)">Save</button>
+            </div> -->
           </td>
         </tr>
         <tr *ngIf="appointments.length === 0">

@@ -1,9 +1,9 @@
 
 
 
-import { Component, OnInit } from '@angular/core';       
+import { Component, OnInit } from '@angular/core';
 import { MyOrderService } from '../../services/my-order.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-my-orders',
   templateUrl: './myorders.component.html',
@@ -11,42 +11,50 @@ import { MyOrderService } from '../../services/my-order.service';
 })
 export class MyOrdersComponent implements OnInit {
   appointments: any[] = [];
-  selectedAppointment: any; 
-  isEditing: boolean = false; 
+  selectedAppointment: any;
+  isEditing: boolean = false;
 
- 
-  hospitals = ['Hospital 1', 'Hospital 2', 'Hospital 3'];
-  doctors = ['General Practitioner', 'Specialist', 'Surgeon'];
-  specialists = ['Cardiologist', 'Dermatologist', 'Neurologist'];
 
-  constructor(private myOrderService: MyOrderService) {}
+  hospitals = [];
+  doctors = [];
+  specialists = [];
+
+  constructor(private myOrderService: MyOrderService, private _snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.loadAppointments();
   }
 
   loadAppointments(): void {
-    this.myOrderService.getAppointments().subscribe((appointments: any[]) => {
-      this.appointments = appointments;
+    this.myOrderService.getAppointments().subscribe({
+      next: (res: any) => {
+        this.appointments = res;
+        this.hospitals = res.hospitalNames;
+        this.doctors = res.doctorName;
+        this.specialists = res.specialist;
+
+      }, error: (err) => {
+        this._snackbar.open("updatenot sucess" + err, "close", { duration: 3000 })
+      }
     });
   }
 
   openEditModal(appointment: any): void {
-    this.selectedAppointment = { ...appointment }; 
+    this.selectedAppointment = { ...appointment };
     this.isEditing = true;
   }
 
-  updateAppointment(): void {
-    this.myOrderService.updateAppointment(this.selectedAppointment).subscribe(() => {
-      this.loadAppointments(); 
-      this.isEditing = false; 
-      this.selectedAppointment = null; 
-    });
+  updateAppointment(id: any): void {
+
   }
 
-  deleteAppointment(appointmentId: string): void {
-    this.myOrderService.deleteAppointment(appointmentId).subscribe(() => {
-      this.appointments = this.appointments.filter(a => a.id !== appointmentId);
+  deleteAppointment(appointmentId: any): void {
+    this.myOrderService.deleteAppointment(appointmentId).subscribe({
+      next: (res: any) => {
+        this._snackbar.open("Deletion sucess", "close", { duration: 3000 })
+      }, error: (err) => {
+        this._snackbar.open("Deletion sucess", "close", { duration: 3000 })
+      }
     });
   }
 }

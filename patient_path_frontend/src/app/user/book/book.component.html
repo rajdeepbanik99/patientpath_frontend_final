@@ -1,17 +1,20 @@
 <section class="book" id="book">
-   
+
     <div class="row">
         <form [formGroup]="bookAppointmentForm" (ngSubmit)="onBookSubmit()">
             <h3>Book your appointment</h3>
-            
+
             <label for="name">Your Name</label>
-            <input formControlName="name" type="text" id="name" placeholder="your name" class="box" required name="name">
+            <input formControlName="name" type="text" id="name" placeholder="your name" class="box" required
+                name="name">
 
             <label for="number">Your Number</label>
-            <input formControlName="number" type="number" id="number" placeholder="your number" class="box" required name="number">
+            <input formControlName="number" type="number" id="number" placeholder="your number" class="box" required
+                name="number">
 
             <label for="email">Your Email</label>
-            <input formControlName="email" type="email" id="email" placeholder="your email" class="box" required name="email">
+            <input formControlName="email" type="email" id="email" placeholder="your email" class="box" required
+                name="email">
 
             <label for="hospital">Select a Hospital</label>
             <!-- <select formControlName="hospital" class="box" required name="hospital">
@@ -23,21 +26,25 @@
             </select> -->
             <select formControlName="hospital" class="box" required name="hospital">
                 <option value="" disabled selected>Select a hospital</option>
-                <option *ngFor="let hospital of hospitals" [value]="hospital.hospitalName">{{ hospital.hospitalName }}</option>
-              </select>
-              
-            
+                <option *ngFor="let hospital of hospitals" [value]="hospital.hospitalName">{{ hospital.hospitalName }}
+                </option>
+            </select>
 
-            <label for="doctors">Select Type of Doctor</label>
-            <select formControlName="doctors" class="box" required name="doctors">
-                <option value="" disabled selected>Select a Doctor</option>
-                <option *ngFor="let doctor of hospitals" [value]="doctor.doctorName">{{ doctor.doctorName }}</option>
-              </select>
+
+
 
             <label for="specialist">Select a Specialist</label>
             <select formControlName="specialist" class="box" required name="specialist">
                 <option value="" disabled selected>Select a Specialist</option>
                 <option *ngFor="let sp of hospitals" [value]="sp.doctorSpilist">{{ sp.doctorSpilist }}</option>
+            </select>
+
+            <label for="doctors">Select Type of Doctor</label>
+            <select formControlName="doctors" class="box" required name="doctors">
+                <option value="" disabled selected>Select a Doctor</option>
+                <option *ngFor="let doctor of hospitals" [value]="doctor.doctorName">
+                  
+                    {{ doctor.doctorName }}</option>
             </select>
 
             <label for="date">Select Date</label>

@@ -6,32 +6,32 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MyOrderService {
-  private apiUrl = 'http://localhost:8001/bookappointment';  
+  private apiUrl = 'http://localhost:8080/bookappointment';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  
+
   getAppointments(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  
+
   createAppointment(appointment: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, appointment);
   }
 
-  
-  deleteAppointment(appointmentId: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${appointmentId}`);
-  } 
 
-  
-updateAppointment(appointment: any): Observable<any> {
-  return this.http.put<any>(`${this.apiUrl}/${appointment.id}`, appointment);
+  deleteAppointment(appointmentId: any): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${appointmentId}`);
+  }
+
+
+  updateAppointment(appointment: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${appointment.id}`, appointment);
+  }
+
+
+
 }
 
 
-
-}
-
- 
