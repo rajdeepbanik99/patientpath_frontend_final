@@ -65,6 +65,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     AboutComponent,
     NavbarComponent,
 
+
      MyOrdersComponent,
      AccountComponent,
      AdddoctorComponent,
@@ -75,16 +76,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
      DoctorlistadminComponent,
      TestComponent,
   
-
-    MyOrdersComponent,
-    AccountComponent,
-    AdddoctorComponent,
-    AddtestComponent,
-    AdminpageComponent,
-    AllorderComponent,
-    TestdetailsComponent,
-    DoctorlistadminComponent,
-
 
 
 

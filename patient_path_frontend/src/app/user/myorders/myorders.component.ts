@@ -51,11 +51,14 @@ export class MyOrdersComponent implements OnInit {
   deleteAppointment(appointmentId: any): void {
     this.myOrderService.deleteAppointment(appointmentId).subscribe({
       next: (res: any) => {
-        this._snackbar.open("Deletion sucess", "close", { duration: 3000 })
+        this.loadAppointments()
+        this._snackbar.open("Deletion sucess", "close", { duration: 100 })
       }, error: (err) => {
-        this._snackbar.open("Deletion sucess", "close", { duration: 3000 })
+        this.loadAppointments();
+        this._snackbar.open("Deletion sucess", "close", { duration: 100 })
       }
     });
+    this.loadAppointments();
   }
 }
 

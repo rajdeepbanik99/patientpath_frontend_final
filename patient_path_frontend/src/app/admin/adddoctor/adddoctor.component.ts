@@ -1,6 +1,6 @@
 import { DialogRef } from '@angular/cdk/dialog';
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 // import { ServiceService } from '../../apiservice/service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,10 +15,12 @@ export class AdddoctorComponent implements OnInit{
   newData:FormGroup;
   constructor(private _fb:FormBuilder,private dialogRef:DialogRef<AdddoctorComponent>,private apiService:ServiceService,private snackbar:MatSnackBar,@Inject(MAT_DIALOG_DATA) public data: any){
     this.newData=_fb.group({
-      doctorName:'',
-      doctorSpilist:'', 
-      hospitalName:'',
-      doctor_avilable:''
+      doctorName:['',Validators.required],
+      doctorSpilist:['',Validators.required], 
+      hospitalName:['',Validators.required],
+      doctor_avilable:['',Validators.required],
+      exprence:['',Validators.required],
+      education:['',Validators.required]
     });
   }
   ngOnInit(): void {
@@ -27,8 +29,8 @@ export class AdddoctorComponent implements OnInit{
   }
   onSave(){
     if(this.data==null){
-      console.log(this.newData.value);
-    this.apiService.addDoctor(this.newData.value).subscribe(
+        console.log(this.newData.value);
+      this.apiService.addDoctor(this.newData.value).subscribe(
       (response)=>{
         this.snackbar.open("added doctor succesfully" ,"done",{
           duration:2000

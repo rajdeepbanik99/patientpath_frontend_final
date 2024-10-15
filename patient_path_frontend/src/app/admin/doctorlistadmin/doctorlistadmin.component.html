@@ -1,7 +1,13 @@
+<div class="container">
+
+
 <mat-form-field appearance="fill" class="filter">
     <mat-label>Filter</mat-label>
     <input matInput (input)="applyFilter($event)" placeholder="Search by name or specialty">
   </mat-form-field>
+ <!-- <button mat-raised-button class="search-button" (click)="performSearch()">
+    Search
+  </button>  -->
   <button mat-raised-button class="button" (click)="newAdd()">
     ADD Doctor
   </button>
@@ -10,7 +16,8 @@
       <h3>Name :{{ doctor.doctorName }}</h3>
       <p>Hospital Name :{{ doctor.hospitalName }}</p>
       <p>doctorSpilist :{{ doctor.doctorSpilist }}</p>
-      
+      <p>exprence :{{ doctor.exprence }}</p>
+      <p>education:{{ doctor.education}}</p>
       
 
       <div >
@@ -36,7 +43,7 @@
       </div>
     </div>
   </div>
-   
+   </div>
 
 
 

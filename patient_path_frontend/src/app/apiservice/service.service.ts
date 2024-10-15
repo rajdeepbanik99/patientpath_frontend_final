@@ -13,6 +13,7 @@ export class ServiceService {
   testurl = 'http://localhost:8080/tests'
   allorderurl = 'http://localhost:8080/bookappointment'
 
+
   adminurl = 'http://localhost:8080/admin'
 
   constructor(private http: HttpClient) { }

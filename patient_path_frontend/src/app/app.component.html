@@ -6,9 +6,15 @@
     [routerLink]="['/home']">
     Home
   </button>
+
+
   <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon"
     [routerLink]="['/about']">
     Services
+  </button>
+  <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon"
+    [routerLink]="['/test']">
+    Tests
   </button>
   <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon"
     [routerLink]="['/doctorlist']">
@@ -27,6 +33,7 @@
     <button mat-menu-item [routerLink]="['/myorders']">My Orders</button>
     <button mat-menu-item [routerLink]="['/login']" (click)="logout()"> Logout</button>
   </mat-menu>
+
   }
 
   @else if (adminactive) {
@@ -38,7 +45,7 @@
     <span class="example-spacer"></span>
     <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
       [routerLink]="['/testdetails']">
-      Test_Deatils
+      Test_Details
     </button>
     <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
       [routerLink]="['/doctorlistadmin']">

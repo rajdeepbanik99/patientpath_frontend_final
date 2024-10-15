@@ -1,7 +1,22 @@
 <div class="container">
-<div class="doctor-list">
+  <div class="doctor-list">
     <div class="doctor-card" *ngFor="let doctor of doctors">
-      <table>
+
+      <h3>
+      Name : {{ doctor.doctorName }}
+      </h3>
+    
+      <p>Specialist :  {{ doctor.doctorSpilist }}</p>
+    
+      <p>Hospital :  {{ doctor.hospitalName }}</p>
+     
+      <p>Experience : {{doctor.exprence}}</p>
+     
+      <p>Education : {{doctor.education}}</p>
+  
+      <p>Availablity : {{ doctor.doctor_avilable }} years</p>
+
+      <!-- <table>
         <td><p>Name :</p></td><td><p>{{doctor.doctorName}}</p></td>
         <tr></tr>
         <td><p>Doctor spilist :</p></td><td><p>{{doctor.doctorSpilist}}</p></td>
@@ -14,13 +29,10 @@
         <tr></tr>
         <td><p>Avilible</p></td><td>{{doctor.doctor_avilable}}</td>
         <tr></tr>
-      </table>
-   
-      
+      </table> -->
+
+
+
     </div>
   </div>
 </div>
-  
-
-
- 
