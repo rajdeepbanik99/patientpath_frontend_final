@@ -11,11 +11,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './doctorlistadmin.component.css'
 })
 export class DoctorlistadminComponent {
+
   doctorList: any[]=[];
   filteredDoctors: any[] = [...this.doctorList];
   constructor(private dialog:MatDialog,private apiService:ServiceService,private snackbar:MatSnackBar){
     
   }
+  
   ngOnInit() {
     this.details();
     
@@ -64,13 +66,21 @@ export class DoctorlistadminComponent {
   applyFilter(event:any){
     const filterValue = (event.target as HTMLInputElement).value;
     this.filteredDoctors = this.doctorList.filter(doctor => 
-      doctor.name.toLowerCase().includes(filterValue.trim().toLowerCase()) || 
-      doctor.specialty.toLowerCase().includes(filterValue.trim().toLowerCase())
+      doctor.doctorName.toLowerCase().includes(filterValue.trim().toLowerCase()) || 
+      doctor.doctorSpilist.toLowerCase().includes(filterValue.trim().toLowerCase())
     );
     // const filterValue=(event.target as HTMLInputElement).value;
     //     this.filteredDoctors.filter=filterValue.trim().toLowerCase();
   }
 
+  performSearch() {
+    // This function can also call applyFilter if needed,
+    // or add additional search logic.
+    const inputField = document.querySelector('input[matInput]') as HTMLInputElement;
+    if (inputField) {
+      this.applyFilter({ target: { value: inputField.value } });
+    }
+  }
 
   addDoctor(){
     const dialogRef=this.dialog.open(AdddoctorComponent);

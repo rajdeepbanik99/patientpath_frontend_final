@@ -16,7 +16,9 @@ export class BookComponent implements OnInit{
   hospitals: any[]=[];
 // bookingForm: any;
 // review: any;
-
+uniqueHospitals: Array<string> = [];
+uniqueDoctors: Array<string> = [];
+uniqueSpecialists: Array<string> = [];
   
   constructor(
     private formBuilder:FormBuilder,
@@ -25,12 +27,14 @@ export class BookComponent implements OnInit{
     private _snax:MatSnackBar
   ){
     hospital: ['']
+    doctor: ['']
+    specialist: ['']
     this.bookAppointmentForm=this.formBuilder.group({
       name:['',Validators.required],
       email:['',Validators.required],
       number:['',Validators.required],
-      hospital:['',Validators.required],
-      doctors:['',Validators.required],
+      hospitalName:['',Validators.required],
+      doctorName:['',Validators.required],
       specialist:['',Validators.required],
       date:['',Validators.required],
       time: ['', Validators.required] 
@@ -39,13 +43,13 @@ export class BookComponent implements OnInit{
     this.reviewForm=this.formBuilder.group({
       writeReview:['',Validators.required]
     });
-
+    
   }
   ngOnInit(): void {
     this.bookServices.getAllData().subscribe(
       (response)=>{
         this.hospitals=response;
-      
+        this.extractUniqueValues();
         console.log(this.hospitals);
       },(error)=>{
         console.log(error);
@@ -53,20 +57,19 @@ export class BookComponent implements OnInit{
     )
   }
 
+  extractUniqueValues() {
+    const hospitalNames = new Set(this.hospitals.map(doctor => doctor.hospitalName));
+    const doctorNames = new Set(this.hospitals.map(doctor => doctor.doctorName));
+    const specialistNames = new Set(this.hospitals.map(doctor => doctor.doctorSpilist));
+  
+    this.uniqueHospitals = Array.from(hospitalNames);
+    this.uniqueDoctors = Array.from(doctorNames);
+    this.uniqueSpecialists = Array.from(specialistNames);
 
- 
-//   onSubmit() {
-//     if(this.reviewForm.value){
-//       this.bookServices.submitReview(this.reviewForm.value).subscribe(
-//         {
-//           next:()=>{
-//           alert("review submitted successfully");
-//           this.reviewForm.reset();
-//           }
-//         }
-//       )
-//   }
-// }
+  }
+
+
+  
 
 
     onSubmit(){

@@ -6,6 +6,30 @@
     [routerLink]="['/home']">
     Home
   </button>
+
+
+  <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon" [routerLink]="['/about']">
+      Services
+    </button>
+    <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon" [routerLink]="['/test']">
+      Tests
+    </button>
+    <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon" [routerLink]="['/doctorlist']">
+      Doctors List
+    </button>
+    <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon" [routerLink]="['/book']">
+      Book Appointment
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with share icon">
+      <mat-icon class="profile-icon">account_circle</mat-icon>
+    </button>
+    
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/myaccount']" >My Account</button>
+      <button mat-menu-item   [routerLink]="['/myorders']">My Orders</button>
+      <button mat-menu-item  [routerLink]="['/login']"  (click)="logout()"> Logout</button>
+    </mat-menu>
+
   <button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon"
     [routerLink]="['/about']">
     Services
@@ -38,7 +62,7 @@
     <span class="example-spacer"></span>
     <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
       [routerLink]="['/testdetails']">
-      Test_Deatils
+      Test_Details
     </button>
     <button mat-raised-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
       [routerLink]="['/doctorlistadmin']">

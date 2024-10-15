@@ -16,6 +16,7 @@ export class AllorderComponent implements OnInit{
    this.apiService.getAllOrder().subscribe(
     (response)=>{
       this.allorder=response;
+      console.log(this.allorder);
     }
    )
   }
