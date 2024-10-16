@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./myorders.component.css']
 })
 export class MyOrdersComponent implements OnInit {
+[x: string]: any;
   appointments: any[] = [];
   selectedAppointment: any;
   isEditing: boolean = false;
@@ -23,20 +24,39 @@ export class MyOrdersComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadAppointments();
+    //this.myorders();
   }
-
+  public  email = localStorage.getItem("useremail")
   loadAppointments(): void {
+    
     this.myOrderService.getAppointments().subscribe({
       next: (res: any) => {
+        // if (localStorage.getItem("useremail") == res.email) {
         this.appointments = res;
-        this.hospitals = res.hospitalNames;
+        // this.hospitals = res.hospitalNames;
         this.doctors = res.doctorName;
-        this.specialists = res.specialist;
+        // this.specialists = res.specialist;
+        // }
 
       }, error: (err) => {
         this._snackbar.open("updatenot sucess" + err, "close", { duration: 3000 })
       }
     });
+
+  }
+
+  myorders() {
+    const email = localStorage.getItem("useremail");
+    console.log(email)
+    if (email) {
+      this.myOrderService.getAppoinmentsByEmail(email).subscribe({
+        next: (res: any) => {
+          console.log(res)
+          this.appointments = res;
+
+        }
+      })
+    }
   }
 
   openEditModal(appointment: any): void {

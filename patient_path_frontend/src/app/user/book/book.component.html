@@ -24,22 +24,17 @@
                 <option value="hospital2">Hospital 2</option>
                 <option value="hospital3">Hospital 3</option> 
             </select> -->
-            <select formControlName="hospitalName" class="box" required name="hospitalName" >
+            <select formControlName="hospitalName" class="box" required name="hospitalName">
                 <option value="" disabled selected>Select a hospital</option>
 
 
 
 
                 <option *ngFor="let hospital of uniqueHospitals" [value]="hospital">{{ hospital }}</option>
-              </select>
-              
-            
+            </select>
 
-            <label for="doctors">Select Type of Doctor</label>
-            <select formControlName="doctorName" class="box" required name="doctorName">
-                <option value="" disabled selected>Select a Doctor</option>
-                <option *ngFor="let doctor of uniqueDoctors" [value]="doctor">{{ doctor }}</option>
-              </select>
+
+
 
 
             <label for="specialist">Select a Specialist</label>
@@ -48,12 +43,11 @@
                 <option *ngFor="let sp of uniqueSpecialists" [value]="sp">{{ sp }}</option>
             </select>
 
+
             <label for="doctors">Select Type of Doctor</label>
-            <select formControlName="doctors" class="box" required name="doctors">
+            <select formControlName="doctorName" class="box" required name="doctorName">
                 <option value="" disabled selected>Select a Doctor</option>
-                <option *ngFor="let doctor of hospitals" [value]="doctor.doctorName">
-                  
-                    {{ doctor.doctorName }}</option>
+                <option *ngFor="let doctor of uniqueDoctors" [value]="doctor">{{ doctor }}</option>
             </select>
 
             <label for="date">Select Date</label>

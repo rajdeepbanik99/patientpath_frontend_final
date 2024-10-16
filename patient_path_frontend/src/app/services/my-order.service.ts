@@ -8,11 +8,16 @@ import { Observable } from 'rxjs';
 export class MyOrderService {
   private apiUrl = 'http://localhost:8080/bookappointment';
 
+  orders = 'http://localhost:8080/bookappointment/orders';
   constructor(private http: HttpClient) { }
 
 
   getAppointments(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
+  }
+
+  getAppoinmentsByEmail(email: any): Observable<any> {
+    return this.http.get<any[]>(this.orders + "/" + email)
   }
 
 

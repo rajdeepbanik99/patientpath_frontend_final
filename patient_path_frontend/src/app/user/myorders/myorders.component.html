@@ -16,25 +16,33 @@
         <th>Actions</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let appointment of appointments">
-        <td>{{appointment.id}}</td>
-        <td>{{appointment.name}}</td>
-        <td>{{appointment.email}}</td>
-        <td>{{appointment.number}}</td>
-        <td>{{appointment.hospitalName}}</td>
-        <td>{{appointment.doctorName}}</td>
-        <td>{{appointment.specialist}}</td>
-        <td>{{appointment.date}}</td>
-        <td>{{appointment.time}}</td>
+    <tbody *ngFor="let ap of appointments">
+
+
+      <tr *ngIf="email ==ap.email ">
+
+        <!-- {{appointments}} -->
+        <td>{{ap.id}}</td>
+        <td>{{ap.name}}</td>
+        <td>{{ap.email}}</td>
+        <td>{{ap.number}}</td>
+        <td>{{ap.hospitalName}}</td>
+        <td>{{ap.doctorName}}</td>
+        <td>{{ap.specialist}}</td>
+        <td>{{ap.date}}</td>
+        <td>{{ap.time}}</td>
 
         <td>
-          <button (click)="deleteAppointment(appointment.id)" style="margin-bottom: 5px;">Delete</button>
+          <button (click)="deleteAppointment(ap.id)" style="margin-bottom: 5px;">Delete</button>
 
           <!-- <div *ngIf="isEditing && selectedAppointment.id === appointment.id">
             <button (click)="updateAppointment()">Save</button>
           </div> -->
         </td>
+
+      </tr>
+      <tr  *ngElse>
+        <td colspan="10">No appointments found.</td>
       </tr>
       <tr *ngIf="appointments.length === 0">
         <td colspan="10">No appointments found.</td>
